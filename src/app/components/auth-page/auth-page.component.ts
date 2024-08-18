@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { UserLogin } from '../../interfaces/user-login';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
-import { tap } from 'rxjs';
 import { LocalStorageService } from '../../services/storage/local-storage.service';
 import { StorageKeys } from '../../utils/constants';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
