@@ -12,8 +12,8 @@ export function createTranslateLoader(http: HttpClient) {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideRouter(routes), 
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
     provideClientHydration(),
     importProvidersFrom([
       TranslateModule.forRoot({
@@ -26,7 +26,6 @@ export const appConfig: ApplicationConfig = {
       })
     ]),
     provideHttpClient(
-      withInterceptorsFromDi(),
       withFetch()
     )
   ]
