@@ -1,3 +1,3 @@
 export const environment = {
-  baseUrl: 'http://localhost:8080',
+  baseUrl: 'http://82.112.245.215/marketapi',
 };
