@@ -9,19 +9,19 @@ export class LocalStorage implements Storage {
   clear(): void {
     return undefined;
   }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   getItem(key: string): string | null {
     return undefined!;
   }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   key(index: number): string | null {
     return undefined!;
   }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   removeItem(key: string): void {
     return undefined!;
   }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   setItem(key: string, value: string): void {
     return undefined!;
   }
@@ -49,7 +49,6 @@ export class LocalStorageService {
     this.storage.clear();
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getItem(key: string): any {
     const storageData = this.storage.getItem(key);
 

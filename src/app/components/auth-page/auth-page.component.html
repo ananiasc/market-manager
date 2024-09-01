@@ -13,12 +13,14 @@
           <h2 class="text-xl font-bold text-customTeal">Login</h2>
           <!-- <a href="#" class="text-customTeal">Register</a> -->
         </div>
-        <form>
-          <div class="mb-4">
-            <input type="email" placeholder="test@admin.com" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-customTeal">
+        <form [formGroup]="loginForm" (submit)="onSubmit($event)">
+          <div class="form-group mb-4">
+            <input formControlName="username" required type="text" placeholder="test_admin"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-customTeal">
           </div>
-          <div class="mb-4">
-            <input type="password" placeholder="********" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-customTeal">
+          <div class="form-group mb-4">
+            <input formControlName="password" required type="password" placeholder="********"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-customTeal">
           </div>
           <div class="flex items-center justify-between mb-4">
             <label class="flex items-center text-gray-700">
@@ -27,7 +29,8 @@
             </label>
             <a href="#" class="text-customTeal">{{'lost-your-password' | translate}}</a>
           </div>
-          <button type="submit" class="w-full bg-customTeal text-white py-2 rounded-lg hover:bg-customTealDark">LOGIN</button>
+          <button type="submit"
+            class="w-full bg-customTeal text-white py-2 rounded-lg hover:bg-customTealDark">LOGIN</button>
         </form>
       </div>
     </div>
