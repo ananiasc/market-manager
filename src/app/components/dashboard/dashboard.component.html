@@ -1,0 +1,142 @@
+<div class="flex h-screen">
+  <!-- Menu Lateral -->
+  <aside class="w-64 bg-white shadow-lg">
+    <!-- Avatar e Nome -->
+    <div class="p-4 text-center">
+      <img src="path-to-avatar.png" class="mx-auto rounded-full" alt="User Avatar" width="80" height="80">
+      <h3 class="mt-2 text-lg font-semibold">John</h3>
+      <p class="text-sm text-gray-500">General Manager</p>
+    </div>
+
+    <!-- Menu Principal -->
+    <nav class="mt-6">
+      <ul class="space-y-2">
+        <!-- Painel -->
+        <li class="px-4 py-2 hover:bg-gray-100">
+          <a href="#" class="flex items-center text-gray-700">
+            <span class="ml-2">Painel</span>
+          </a>
+        </li>
+
+        <!-- Cadastro -->
+        <li class="px-4 py-2 hover:bg-gray-100">
+          <button (click)="toggleMenu('cadastro')" class="flex items-center justify-between w-full text-gray-700">
+            <span class="flex items-center">
+              <span class="material-icons-outlined">
+                <!-- folder_open -->icon
+              </span>
+              <span class="ml-2">Cadastro</span>
+            </span>
+            <span class="material-icons-outlined">
+              <!-- {{ isCadastroOpen ? 'expand_less' : 'expand_more' }} -->icon
+            </span>
+          </button>
+          <!-- Submenu Cadastro -->
+          <ul *ngIf="isCadastroOpen" class="mt-2 ml-4 space-y-1 text-sm">
+            <li class="py-1 hover:bg-gray-100">
+              <a href="#" class="flex items-center">
+                <span class="material-icons-outlined">
+                  <!-- person -->icon
+                </span>
+                <span class="ml-2">Usuário</span>
+              </a>
+            </li>
+            <li class="py-1 hover:bg-gray-100">
+              <a href="#" class="flex items-center">
+                <span class="material-icons-outlined">
+                  <!-- shopping_cart -->icon
+                </span>
+                <span class="ml-2">Produtos</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Market -->
+        <li class="px-4 py-2 hover:bg-gray-100">
+          <button (click)="toggleMenu('market')" class="flex items-center justify-between w-full text-gray-700">
+            <span class="flex items-center">
+              <span class="material-icons-outlined">
+                <!-- shopping_bag -->icon
+              </span>
+              <span class="ml-2">Market</span>
+            </span>
+            <span class="material-icons-outlined">
+              <!-- {{ isMarketOpen ? 'expand_less' : 'expand_more' }} -->icon
+            </span>
+          </button>
+          <!-- Submenu Market -->
+          <ul *ngIf="isMarketOpen" class="mt-2 ml-4 space-y-1 text-sm">
+            <li class="py-1 hover:bg-gray-100">
+              <a href="#" class="flex items-center">
+                <span class="material-icons-outlined">
+                  <!-- receipt_long -->icon
+                </span>
+                <span class="ml-2">Pedidos</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Configurações -->
+        <li class="px-4 py-2 hover:bg-gray-100">
+          <a href="#" class="flex items-center text-gray-700">
+            <span class="material-icons-outlined">settings</span>
+            <span class="ml-2">Configurações</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+
+  <!-- Conteúdo Principal -->
+  <main class="flex-1 bg-gray-50">
+    <!-- Header -->
+    <header class="flex items-center justify-between p-4 bg-white shadow">
+      <div class="flex items-center space-x-4">
+        <button class="p-2 text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500">
+          <!-- Icone de Menu -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+        <h1 class="text-xl font-semibold">Painel</h1>
+      </div>
+      <!-- Seção de busca e ícones -->
+      <div class="flex items-center space-x-4">
+        <input type="text" placeholder="Search.." class="px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300">
+        <div class="flex space-x-2">
+          <!-- Ícones adicionais -->
+          <button class="p-2 text-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Boxes de Informação -->
+    <div class="p-4 space-y-4">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+        <div class="p-4 bg-orange-100 rounded-lg shadow">
+          <h2 class="text-lg font-semibold">Earnings</h2>
+          <p class="text-2xl font-bold">$6659 This Month</p>
+        </div>
+        <div class="p-4 bg-teal-100 rounded-lg shadow">
+          <h2 class="text-lg font-semibold">Products</h2>
+          <p class="text-2xl font-bold">$9856 This Month</p>
+        </div>
+        <div class="p-4 bg-pink-100 rounded-lg shadow">
+          <h2 class="text-lg font-semibold">Messages</h2>
+          <p class="text-2xl font-bold">$893 This Month</p>
+        </div>
+        <div class="p-4 bg-gray-100 rounded-lg shadow">
+          <h2 class="text-lg font-semibold">New Vendors</h2>
+          <p class="text-2xl font-bold">$45631 This Month</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
