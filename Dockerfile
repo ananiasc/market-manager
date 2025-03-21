@@ -1,20 +1,26 @@
-# Usa a imagem oficial do Node.js como base
-FROM node:18.20.7
+# Etapa 1: Build do Angular SSR
+FROM node:18.20.7 AS build
 
-# Define o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia os arquivos do projeto para o container
 COPY package.json package-lock.json ./
-
-# Instala as dependências
 RUN npm install
 
-# Copia o restante do código para o container
 COPY . .
+RUN npm run build
 
-# Expõe a porta usada pela aplicação
+# Etapa 2: Imagem final apenas com o necessário para rodar o SSR
+FROM node:18.20.7
+
+WORKDIR /app
+
+# Copia apenas os arquivos necessários da etapa de build
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/package.json /app/package-lock.json ./
+
+# Instala apenas as dependências necessárias para rodar o servidor
+RUN npm install --omit=dev
+
 EXPOSE 4000
 
-# Comando para iniciar a aplicação
-CMD ["npm", "run", "serve:ssr:market-manager"]
+CMD ["node", "dist/market-manager/server/server.mjs"]
