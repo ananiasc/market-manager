@@ -1,3 +1,3 @@
 export const environment = {
-  baseUrl: 'https://ananiascaetano.dev.br',
+  baseUrl: 'https://api.ananiascaetano.dev.br',
 };

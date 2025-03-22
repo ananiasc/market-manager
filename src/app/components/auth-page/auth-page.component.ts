@@ -7,13 +7,12 @@ import { StorageKeys } from '../../utils/constants';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-auth-page',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    ReactiveFormsModule,
-  ],
-  templateUrl: './auth-page.component.html'
+    selector: 'app-auth-page',
+    imports: [
+        TranslateModule,
+        ReactiveFormsModule,
+    ],
+    templateUrl: './auth-page.component.html'
 })
 export class AuthPageComponent {
   loginForm: FormGroup = new FormGroup({
