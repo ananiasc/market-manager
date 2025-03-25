@@ -15,4 +15,5 @@ export class ImagesUrl {
   public static BRANDS = 'https://img.icons8.com/?size=100&id=zra9GyPSFmQw&format=png&color=000000';
   public static CATEGORIES = 'https://img.icons8.com/?size=100&id=13705&format=png&color=000000';
   public static USER_AVATAR = 'https://img.icons8.com/?size=100&id=7819&format=png&color=000000';
+  public static PROMOTIONS= 'https://img.icons8.com/?size=100&id=12089&format=png&color=000000';
 }

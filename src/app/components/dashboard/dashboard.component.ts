@@ -11,8 +11,9 @@ import { ImagesUrl } from '../../utils/constants';
 export class DashboardComponent {
   isCatalogOpen = false;
   isMarketOpen = false;
+
   img = {
-    setting: ImagesUrl.SETTINGS,
+    settings: ImagesUrl.SETTINGS,
     users: ImagesUrl.USERS,
     products: ImagesUrl.PRODUCTS,
     clients: ImagesUrl.CLIENTS,
@@ -23,7 +24,8 @@ export class DashboardComponent {
     toggleCatalog: ImagesUrl.MENU_CLOSED,
     brands: ImagesUrl.BRANDS,
     categories: ImagesUrl.CATEGORIES,
-    userAvatar: ImagesUrl.USER_AVATAR
+    userAvatar: ImagesUrl.USER_AVATAR,
+    promotions: ImagesUrl.PROMOTIONS,
   }
 
   toggleMenu(menu: string): void {
