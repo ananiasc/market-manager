@@ -9,7 +9,7 @@ import { ImagesUrl } from '../../utils/constants';
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {
-  isCadastroOpen = false;
+  isCatalogOpen = false;
   isMarketOpen = false;
   img = {
     setting: ImagesUrl.SETTINGS,
@@ -28,8 +28,8 @@ export class DashboardComponent {
 
   toggleMenu(menu: string): void {
     if (menu === 'catalogo') {
-      this.isCadastroOpen = !this.isCadastroOpen;
-      this.img.toggleCatalog = this.toggleMenuImg(this.isCadastroOpen);
+      this.isCatalogOpen = !this.isCatalogOpen;
+      this.img.toggleCatalog = this.toggleMenuImg(this.isCatalogOpen);
     }
   }
 
