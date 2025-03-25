@@ -3,7 +3,7 @@
   <aside class="w-64 bg-white shadow-lg">
     <!-- Avatar e Nome -->
     <div class="p-4 text-center">
-      <img src="path-to-avatar.png" class="mx-auto rounded-full" alt="User Avatar" width="80" height="80">
+      <img [src]="img.userAvatar" class="mx-auto rounded-full w-16" alt="User Avatar">
       <h3 class="mt-2 text-lg font-semibold">John</h3>
       <p class="text-sm text-gray-500">General Manager</p>
     </div>
@@ -11,77 +11,80 @@
     <!-- Menu Principal -->
     <nav class="mt-6">
       <ul class="space-y-2">
-        <!-- Painel -->
         <li class="px-4 py-2 hover:bg-gray-100">
-          <a href="#" class="flex items-center text-gray-700">
-            <span class="ml-2">Painel</span>
-          </a>
-        </li>
-
-        <!-- Cadastro -->
-        <li class="px-4 py-2 hover:bg-gray-100">
-          <button (click)="toggleMenu('cadastro')" class="flex items-center justify-between w-full text-gray-700">
+          <button (click)="toggleMenu('catalogo')" class="flex items-center justify-between w-full text-gray-700">
             <span class="flex items-center">
               <span class="material-icons-outlined">
-                <!-- folder_open -->icon
+                <img [src]="img.catalog" class="w-6">
               </span>
-              <span class="ml-2">Cadastro</span>
+              <span class="ml-2">Catálogo</span>
             </span>
             <span class="material-icons-outlined">
-              <!-- {{ isCadastroOpen ? 'expand_less' : 'expand_more' }} -->icon
+              <img [src]="img.toggleCatalog" class="w-6">
             </span>
           </button>
-          <!-- Submenu Cadastro -->
+          
           <ul *ngIf="isCadastroOpen" class="mt-2 ml-4 space-y-1 text-sm">
             <li class="py-1 hover:bg-gray-100">
               <a href="#" class="flex items-center">
                 <span class="material-icons-outlined">
-                  <!-- person -->icon
-                </span>
-                <span class="ml-2">Usuário</span>
-              </a>
-            </li>
-            <li class="py-1 hover:bg-gray-100">
-              <a href="#" class="flex items-center">
-                <span class="material-icons-outlined">
-                  <!-- shopping_cart -->icon
+                  <img [src]="img.products" class="w-6">
                 </span>
                 <span class="ml-2">Produtos</span>
               </a>
             </li>
-          </ul>
-        </li>
 
-        <!-- Market -->
-        <li class="px-4 py-2 hover:bg-gray-100">
-          <button (click)="toggleMenu('market')" class="flex items-center justify-between w-full text-gray-700">
-            <span class="flex items-center">
-              <span class="material-icons-outlined">
-                <!-- shopping_bag -->icon
-              </span>
-              <span class="ml-2">Market</span>
-            </span>
-            <span class="material-icons-outlined">
-              <!-- {{ isMarketOpen ? 'expand_less' : 'expand_more' }} -->icon
-            </span>
-          </button>
-          <!-- Submenu Market -->
-          <ul *ngIf="isMarketOpen" class="mt-2 ml-4 space-y-1 text-sm">
             <li class="py-1 hover:bg-gray-100">
               <a href="#" class="flex items-center">
                 <span class="material-icons-outlined">
-                  <!-- receipt_long -->icon
+                  <img [src]="img.brands" class="w-6">
                 </span>
-                <span class="ml-2">Pedidos</span>
+                <span class="ml-2">Marcas</span>
+              </a>
+            </li>
+
+            <li class="py-1 hover:bg-gray-100">
+              <a href="#" class="flex items-center">
+                <span class="material-icons-outlined">
+                  <img [src]="img.categories" class="w-6">
+                </span>
+                <span class="ml-2">Categorias</span>
               </a>
             </li>
           </ul>
         </li>
 
-        <!-- Configurações -->
         <li class="px-4 py-2 hover:bg-gray-100">
           <a href="#" class="flex items-center text-gray-700">
-            <span class="material-icons-outlined">settings</span>
+            <img [src]="img.setting" class="w-6">
+            <span class="ml-2">Promoções</span>
+          </a>
+        </li>
+
+        <li class="px-4 py-2 hover:bg-gray-100">
+          <a href="#" class="flex items-center text-gray-700">
+            <img [src]="img.users" class="w-6">
+            <span class="ml-2">Usuários</span>
+          </a>
+        </li>
+
+        <li class="px-4 py-2 hover:bg-gray-100">
+          <a href="#" class="flex items-center text-gray-700">
+            <img [src]="img.clients" class="w-6">
+            <span class="ml-2">Clientes</span>
+          </a>
+        </li>
+
+        <li class="px-4 py-2 hover:bg-gray-100">
+          <a href="#" class="flex items-center text-gray-700">
+            <img [src]="img.sales" class="w-6">
+            <span class="ml-2">Vendas</span>
+          </a>
+        </li>
+
+        <li class="px-4 py-2 hover:bg-gray-100">
+          <a href="#" class="flex items-center text-gray-700">
+            <img [src]="img.setting" class="w-6">
             <span class="ml-2">Configurações</span>
           </a>
         </li>
