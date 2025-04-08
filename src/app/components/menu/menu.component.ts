@@ -30,6 +30,7 @@ export class MenuComponent {
     categories: ImagesUrl.CATEGORIES,
     userAvatar: ImagesUrl.USER_AVATAR,
     promotions: ImagesUrl.PROMOTIONS,
+    dashboard: ImagesUrl.DASHBOARD,
   }
 
   toggleMenu(menu: string): void {
