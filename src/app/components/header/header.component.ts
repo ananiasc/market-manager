@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { ImagesUrl } from '../../utils/constants';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-header',
   standalone: true,
   imports: [],
-  templateUrl: './dashboard.component.html'
+  templateUrl: './header.component.html'
 })
-export class DashboardComponent {
+export class HeaderComponent {
   isCatalogOpen = false;
   isMarketOpen = false;
 

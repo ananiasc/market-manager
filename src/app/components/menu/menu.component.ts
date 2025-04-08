@@ -1,13 +1,18 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { ImagesUrl } from '../../utils/constants';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-menu',
   standalone: true,
-  imports: [],
-  templateUrl: './dashboard.component.html'
+  imports: [
+    NgIf, 
+    RouterLink
+  ],
+  templateUrl: './menu.component.html'
 })
-export class DashboardComponent {
+export class MenuComponent {
   isCatalogOpen = false;
   isMarketOpen = false;
 
