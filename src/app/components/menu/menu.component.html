@@ -2,8 +2,8 @@
   <!-- Avatar e Nome -->
   <div class="p-4 text-center">
     <img [src]="img.userAvatar" class="mx-auto rounded-full w-16" alt="User Avatar">
-    <h3 class="mt-2 text-lg font-semibold">John</h3>
-    <p class="text-sm text-gray-500">General Manager</p>
+    <h3 class="mt-2 text-lg font-semibold">{{ user.name }}</h3>
+    <p class="text-sm text-gray-500">{{ user.role.toUpperCase() }}</p>
   </div>
 
   <!-- Menu Principal -->

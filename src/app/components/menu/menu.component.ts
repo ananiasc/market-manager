@@ -2,6 +2,8 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { ImagesUrl } from '../../utils/constants';
 import { RouterLink } from '@angular/router';
+import { UserService } from '../../services/user/user.service';
+import { UserDto } from '../../interfaces/user.dto';
 
 @Component({
   selector: 'app-menu',
@@ -15,6 +17,16 @@ import { RouterLink } from '@angular/router';
 export class MenuComponent {
   isCatalogOpen = false;
   isMarketOpen = false;
+  user: UserDto = {
+    active: false,
+    email: '',
+    id: -1,
+    lastName: '',
+    name: '',
+    phoneNumber: '',
+    role: '',
+    username: '',
+  };
 
   img = {
     settings: ImagesUrl.SETTINGS,
@@ -31,6 +43,29 @@ export class MenuComponent {
     userAvatar: ImagesUrl.USER_AVATAR,
     promotions: ImagesUrl.PROMOTIONS,
     dashboard: ImagesUrl.DASHBOARD,
+  }
+
+  constructor(
+    private userService: UserService,
+  ) {
+    this.findMe();
+  }
+
+  private findMe() {
+    this.userService
+    .findMe()
+    .subscribe(
+      {
+        next: userDto => {
+          this.user = userDto;
+        },
+        error: (err) => {
+          console.log(err);
+          console.log('Algo deu errado. Tente novamente mais tarde.');
+        },
+        complete: () => {},
+      }
+    );
   }
 
   toggleMenu(menu: string): void {
