@@ -1,0 +1,97 @@
+<aside class="w-64 h-full bg-white shadow-lg">
+  <!-- Avatar e Nome -->
+  <div class="p-4 text-center">
+    <img [src]="img.userAvatar" class="mx-auto rounded-full w-16" alt="User Avatar">
+    <h3 class="mt-2 text-lg font-semibold">{{ user.name }}</h3>
+    <p class="text-sm text-gray-500">{{ user.role.toUpperCase() }}</p>
+  </div>
+
+  <!-- Menu Principal -->
+  <nav class="mt-6">
+    <ul class="space-y-2">
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <a [routerLink]="'/dashboard'" class="flex items-center text-gray-700">
+          <img [src]="img.dashboard" class="w-6">
+          <span class="ml-2">Dashboard</span>
+        </a>
+      </li>
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <button (click)="toggleMenu('catalogo')" class="flex items-center justify-between w-full text-gray-700">
+          <span class="flex items-center">
+            <span class="material-icons-outlined">
+              <img [src]="img.catalog" class="w-6">
+            </span>
+            <span class="ml-2">Catálogo</span>
+          </span>
+          <span class="material-icons-outlined">
+            <img [src]="img.toggleCatalog" class="w-6">
+          </span>
+        </button>
+        
+        <ul *ngIf="isCatalogOpen" class="mt-2 ml-4 space-y-1 text-sm">
+          <li class="py-1 hover:bg-gray-100">
+            <a [routerLink]="'/products'" class="flex items-center">
+              <span class="material-icons-outlined">
+                <img [src]="img.products" class="w-6">
+              </span>
+              <span class="ml-2">Produtos</span>
+            </a>
+          </li>
+
+          <li class="py-1 hover:bg-gray-100">
+            <a [routerLink]="'/brands'" class="flex items-center">
+              <span class="material-icons-outlined">
+                <img [src]="img.brands" class="w-6">
+              </span>
+              <span class="ml-2">Marcas</span>
+            </a>
+          </li>
+
+          <li class="py-1 hover:bg-gray-100">
+            <a [routerLink]="'/categories'" class="flex items-center">
+              <span class="material-icons-outlined">
+                <img [src]="img.categories" class="w-6">
+              </span>
+              <span class="ml-2">Categorias</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <a [routerLink]="'/promotions'" class="flex items-center text-gray-700">
+          <img [src]="img.promotions" class="w-6">
+          <span class="ml-2">Promoções</span>
+        </a>
+      </li>
+
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <a [routerLink]="'/users'" class="flex items-center text-gray-700">
+          <img [src]="img.users" class="w-6">
+          <span class="ml-2">Usuários</span>
+        </a>
+      </li>
+
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <a [routerLink]="'/clients'" class="flex items-center text-gray-700">
+          <img [src]="img.clients" class="w-6">
+          <span class="ml-2">Clientes</span>
+        </a>
+      </li>
+
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <a [routerLink]="'/sales'" class="flex items-center text-gray-700">
+          <img [src]="img.sales" class="w-6">
+          <span class="ml-2">Vendas</span>
+        </a>
+      </li>
+
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <a [routerLink]="'/settings'" class="flex items-center text-gray-700">
+          <img [src]="img.settings" class="w-6">
+          <span class="ml-2">Configurações</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
